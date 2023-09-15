@@ -11,7 +11,9 @@ import static org.hamcrest.Matchers.*;
 public class Demo {
 	@Test
 	public void performPostFunction() throws Exception {
+		/*baseURI="https://rahulshettyacademy.com"*/
 		RestAssured.baseURI = "https://rahulshettyacademy.com";
+		/*For POST Method Code*/
 		String res = given().queryParam("key", "qaclick123").header("Content-Type", "application/json")
 				.body("{\r\n" + "  \"location\": {\r\n" + "    \"lat\": -38.383494,\r\n" + "    \"lng\": 33.427362\r\n"
 						+ "  },\r\n" + "  \"accuracy\": 50,\r\n" + "  \"name\": \"Frontline house\",\r\n"
@@ -25,6 +27,8 @@ public class Demo {
 		JsonPath js = new JsonPath(res);
 		String place_id = js.get("place_id");
 		System.out.println(place_id);
+		
+		/*For GET Method Code*/
 		String gets = given().queryParam("key", "qaclick123").queryParam("place_id", place_id)
 				.header("Content-Type", "application/json").when().get("/maps/api/place/get/json").then().log().all()
 				.extract().response().asString();
