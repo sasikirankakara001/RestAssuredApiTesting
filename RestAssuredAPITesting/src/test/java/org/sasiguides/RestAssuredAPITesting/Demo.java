@@ -49,4 +49,29 @@ public class Demo {
 		System.out.println(del);
 	}
 
+	@Test
+	public void performDifferentOperations() throws Exception {
+
+		RestAssured.baseURI = "https://rahulshettyacademy.com";
+		String required_response = given().queryParam("key", "qaclick123").header("Content-Type", "application/json")
+				.body("{\r\n" + "  \"location\": {\r\n" + "    \"lat\": -38.383494,\r\n" + "    \"lng\": 33.427362\r\n"
+						+ "  },\r\n" + "  \"accuracy\": 50,\r\n" + "  \"name\": \"Frontline house\",\r\n"
+						+ "  \"phone_number\": \"(+91) 983 893 3937\",\r\n"
+						+ "  \"address\": \"29, side layout, cohen 09\",\r\n" + "  \"types\": [\r\n"
+						+ "    \"shoe park\",\r\n" + "    \"shop\"\r\n" + "  ],\r\n"
+						+ "  \"website\": \"http://google.com\",\r\n" + "  \"language\": \"French-IN\"\r\n" + "}\r\n"
+						+ "")
+				.when().post("/maps/api/place/add/json").then().assertThat().statusCode(200).log().all().extract().response().asString();
+		JsonPath js = new JsonPath(required_response);
+		String status = js.get("status");
+		System.out.println("Required Status: " + status);
+		String place_id = js.get("place_id");
+		System.out.println("Required Place_Id: "+place_id);
+		System.out.println("Required Scope: "+js.get("scope"));
+		System.out.println("Required Reference: "+js.get("reference"));
+		System.out.println("Required Id: "+js.get("id"));
+		System.out.println(required_response);
+		
+	}
+
 }

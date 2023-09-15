@@ -2,15 +2,15 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-16T03:28:37 IST" name="Default suite" finished-at="2023-09-16T03:28:45 IST" duration-ms="7960">
+  <suite started-at="2023-09-16T03:56:06 IST" name="Default suite" finished-at="2023-09-16T03:56:08 IST" duration-ms="2369">
     <groups>
     </groups>
-    <test started-at="2023-09-16T03:28:37 IST" name="Default test" finished-at="2023-09-16T03:28:45 IST" duration-ms="7960">
+    <test started-at="2023-09-16T03:56:06 IST" name="Default test" finished-at="2023-09-16T03:56:08 IST" duration-ms="2369">
       <class name="org.sasiguides.RestAssuredAPITesting.Demo">
-        <test-method signature="performPostFunction()[pri:0, instance:org.sasiguides.RestAssuredAPITesting.Demo@479d31f3]" started-at="2023-09-16T03:28:37 IST" name="performPostFunction" finished-at="2023-09-16T03:28:45 IST" duration-ms="7874" status="PASS">
+        <test-method signature="performDifferentOperations()[pri:0, instance:org.sasiguides.RestAssuredAPITesting.Demo@402bba4f]" started-at="2023-09-16T03:56:06 IST" name="performDifferentOperations" finished-at="2023-09-16T03:56:08 IST" duration-ms="2323" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- performPostFunction -->
+        </test-method> <!-- performDifferentOperations -->
       </class> <!-- org.sasiguides.RestAssuredAPITesting.Demo -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
