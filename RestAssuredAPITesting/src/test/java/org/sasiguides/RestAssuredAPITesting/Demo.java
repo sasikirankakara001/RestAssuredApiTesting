@@ -33,6 +33,16 @@ public class Demo {
 				.header("Content-Type", "application/json").when().get("/maps/api/place/get/json").then().log().all()
 				.extract().response().asString();
 		System.out.println(gets);
+		
+		/*For PUT Method Code*/
+	String	puts=given().queryParam("key", "qaclick123").queryParam("place_id", place_id).header("Content-Type","application/json")
+		.body("{\r\n"
+				+ "\"place_id\":\""+place_id+"\",\r\n"
+				+ "\"address\":\"70 Summer walk, USA\",\r\n"
+				+ "\"key\":\"qaclick123\"\r\n"
+				+ "}\r\n"
+				+ "").when().put("/maps/api/place/update/json").then().log().all().extract().response().asString();
+		System.out.println(puts);
 
 	}
 
